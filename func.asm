@@ -59,14 +59,13 @@ loop2:
     mov		dl, byte [eax]
     mov		byte [ecx], dl
     inc		eax
+    inc		ecx
     cmp 	byte [eax], 0	; compare to 0
     je		continue2
     inc 	eax
-    inc		ecx
     jmp 	loop2
 
 continue2:
-    inc		ecx
     mov		eax, [ebp+12]   ; load output address in eax
     inc		eax
 
@@ -76,14 +75,13 @@ loop3:
     mov		dl, byte [eax]
     mov		byte [ecx], dl
     inc		eax
+    inc		ecx
     cmp 	byte [eax], 0	; compare to 0
     je		continue3
     inc 	eax
-    inc		ecx
     jmp 	loop3
 
 continue3:
-    inc		ecx
     mov		dl, 0
     mov		byte [ecx], dl
     mov		eax, [ebp+12]   ; load output address in eax
